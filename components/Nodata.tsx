@@ -7,7 +7,7 @@ const NodataPage = () => {
  return (
     <View style={styles.container}>
       <LottieView
-        source={noDataAnim} // 👈 apna file path daal
+        source={noDataAnim}
         autoPlay
         loop
         style={{ width: 250, height: 250 }}
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: "#666",
+    color: "#F46130",
     marginTop: 10,
     fontWeight: "500",
   },

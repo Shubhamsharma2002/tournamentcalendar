@@ -1,4 +1,4 @@
-import NodataPage from "@/components/Nodata";
+import Loader from "@/components/Loader";
 import { View } from "react-native";
 
 export default function Index() {
@@ -10,7 +10,8 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <NodataPage/>
+      {/* <NodataPage/> */}
+      <Loader/>
     </View>
   );
 }
