@@ -1,4 +1,5 @@
-import Loader from "@/components/Loader";
+import CalendarView from "@/components/CalendarView";
+import NodataPage from "@/components/Nodata";
 import { View } from "react-native";
 
 export default function Index() {
@@ -11,7 +12,12 @@ export default function Index() {
       }}
     >
       {/* <NodataPage/> */}
-      <Loader/>
+      {/* <Loader/> */}
+      <>
+      <CalendarView/>
+      <NodataPage/>
+      </>
     </View>
+    
   );
 }
