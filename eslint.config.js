@@ -6,5 +6,9 @@ module.exports = defineConfig([
   expoConfig,
   {
     ignores: ['dist/*'],
+    files: ["**/*.tsx", "**/*.ts"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off"
+    }
   },
 ]);
