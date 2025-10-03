@@ -25,7 +25,6 @@ interface TournamentCardProps {
   fixtures: Fixture[];
 }
 
-// Define component as a regular function with typed props
 const TournamentCard = ({
   title,
   sport,
@@ -67,7 +66,12 @@ const TournamentCard = ({
         left={() => (
           <View style={styles.logoContainer}>
             <Image
-              source={{ uri: logo }}
+              source={{
+                uri:
+                  logo && logo.trim() !== ""
+                    ? logo
+                    : "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+              }}
               style={styles.logo}
               resizeMode="contain"
             />
@@ -82,7 +86,10 @@ const TournamentCard = ({
               style={{ margin: 0, padding: 0 }}
             />
             <Text
-              style={[styles.category, { color: getCategoryColor(), marginTop: 2 }]}
+              style={[
+                styles.category,
+                { color: getCategoryColor(), marginTop: 2 },
+              ]}
             >
               {category}
             </Text>
@@ -112,7 +119,11 @@ const TournamentCard = ({
               <Chip
                 mode="outlined"
                 style={styles.stageChip}
-                textStyle={{ color: "#f25c05", fontSize: 12, fontWeight: "600" }}
+                textStyle={{
+                  color: "#f25c05",
+                  fontSize: 12,
+                  fontWeight: "600",
+                }}
               >
                 {fixture.stage}
               </Chip>
@@ -120,9 +131,15 @@ const TournamentCard = ({
 
             {/* Logos */}
             <View style={styles.teamsRow}>
-              <Image source={{ uri: fixture.homeLogo }} style={styles.teamLogo} />
+              <Image
+                source={{ uri: fixture.homeLogo }}
+                style={styles.teamLogo}
+              />
               <Text style={styles.vs}>VS</Text>
-              <Image source={{ uri: fixture.awayLogo }} style={styles.teamLogo} />
+              <Image
+                source={{ uri: fixture.awayLogo }}
+                style={styles.teamLogo}
+              />
             </View>
 
             {/* Date + Time */}
@@ -142,7 +159,7 @@ const TournamentCard = ({
         ))}
     </Card>
   );
-}
+};
 
 export default TournamentCard;
 
@@ -153,14 +170,16 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   logoContainer: {
-    width: 40,
-    height: 40,
-    marginRight: 10,
+    width: 55,
+    height: 55,
+    marginRight: 12,
+    borderRadius: 8,
+    overflow: "hidden", 
+    backgroundColor: "#eee", 
   },
   logo: {
-    width: 40,
-    height: 40,
-    borderRadius: 6,
+    width: "100%",
+    height: "100%",
   },
   title: {
     fontSize: 15,
