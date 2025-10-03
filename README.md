@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# 🏆 Tournament Calendar App  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A **React Native Expo app** to browse, search, and explore **sports tournaments & fixtures** with an **interactive calendar view**.  
+Select your sport, view upcoming tournaments, explore fixtures, and enjoy a smooth UI experience with custom styling and loaders.  
 
-## Get started
+---
 
-1. Install dependencies
+## 📸 Screenshots  
 
-   ```bash
-   npm install
-   ```
+| Search Sports | Tournament Calendar | Tournament Details |
+|---------------|----------------------|---------------------|
+| ![Search](https://via.placeholder.com/250x500) | ![Calendar](https://via.placeholder.com/250x500) | ![Tournament](https://via.placeholder.com/250x500) |
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## ✨ Features  
 
-In the output, you'll find options to open the app in a
+- 🔍 **Search Sports** – Live dropdown search with API integration.  
+- 📅 **Calendar View** – Select a date & instantly see tournaments.  
+- 🏟 **Tournament Cards** – Expand to view fixtures, teams, venue & timings.  
+- 🖼 **Logos & Images** – Tournament and team logos included with fallback images.  
+- ⚡ **Fast & Smooth** – Optimized with loaders and no scrollbars for clean UI.  
+- 🎨 **Custom Design** – Styled with orange highlights & material design components.  
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Tech Stack  
 
-## Get a fresh project
+- [React Native](https://reactnative.dev/) + [Expo](https://expo.dev/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Axios](https://axios-http.com/) – API calls  
+- [react-native-calendars](https://github.com/wix/react-native-calendars) – Calendar view  
+- [react-native-paper](https://callstack.github.io/react-native-paper/) – UI components  
+- [Expo Vector Icons](https://icons.expo.fyi/) – Icons  
 
-When you're ready, run:
+---
 
+## ⚙️ Installation  
+
+1. Clone the repo  
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/tournament-calendar.git
+cd tournament-calendar
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+📦 TOURNAMENTCALENDAR
+ ┣ 📂 app
+ ┃ ┣ 📜 _layout.tsx
+ ┃ ┗ 📜 index.tsx
+ ┣ 📂 assets
+ ┃ ┣ 📂 animations
+ ┃ ┃ ┣ 📜 loader.json
+ ┃ ┃ ┗ 📜 nodata.json
+ ┃ ┗ 📂 images
+ ┣ 📂 components
+ ┃ ┣ 📜 CalendarView.tsx
+ ┃ ┣ 📜 Loader.tsx
+ ┃ ┣ 📜 Nodata.tsx
+ ┃ ┣ 📜 Searchbtton.tsx
+ ┃ ┗ 📜 TournamentCard.tsx
+ ┣ 📜 app.json
+ ┣ 📜 eslint.config.js
+ ┣ 📜 .gitignore
+ ┗ 📜 README.md
 
-## Learn more
+## 👤 Developer: Shubham Sharma
 
-To learn more about developing your project with Expo, look at the following resources:
+Feel free to connect with me:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shubhamsharma2002)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shubhamsharma2026/)   [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shubhamjii2002@gmail.com)
