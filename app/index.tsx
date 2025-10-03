@@ -80,9 +80,12 @@ const TOURNAMENTS = [
 ];
 
 export default function Index() {
-  const handleSportSelect = (sport: string) => {
-    console.log("Selected Sport:", sport);
-  };
+const handleSportSelect = (sport: { id: string | number; name: string }) => {
+  // console.log("Selected Sport:", sport.id, sport.name);
+  // // setSelectedSport(sport);
+};
+
+
 
   return (
     <FlatList

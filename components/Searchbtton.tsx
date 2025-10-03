@@ -1,26 +1,45 @@
 import { Ionicons } from "@expo/vector-icons";
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 interface SearchBarProps {
-  onSelect: (sport: string) => void;
+ onSelect: (sport: { id: string; name: string })=>void
 }
-
-const sportsList = ["Football", "Badminton", "Cricket", "Tennis", "Hockey"];
 
 const SearchButton = ({ onSelect }: SearchBarProps) => {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [sportsList, setSportsList] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
 
+  //  fetch sports list
+  useEffect(() => {
+    const fetchSports = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get("https://stapubox.com/sportslist");
+        setSportsList(res.data?.data || []); 
+      } catch (err) {
+        console.error("Error fetching sports:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchSports();
+  }, []);
+
+  // ✅ filter sports by search query
   const filteredSports = sportsList.filter((sport) =>
-    sport.toLowerCase().includes(query.toLowerCase())
+    (sport.name ?? sport.sport_name ?? "")
+      .toLowerCase()
+      .includes(query.toLowerCase())
   );
 
   return (
     <View style={styles.container}>
       {/* Input field */}
       <View style={styles.searchContainer}>
-       
         <TextInput
           style={styles.input}
           placeholder="Search your sport"
@@ -43,20 +62,26 @@ const SearchButton = ({ onSelect }: SearchBarProps) => {
       {/* Dropdown list */}
       {showDropdown && (
         <View style={styles.dropdown}>
-          {filteredSports.length > 0 ? (
-            filteredSports.map((sport, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.dropdownItem}
-                onPress={() => {
-                  onSelect(sport);
-                  setQuery(sport);
-                  setShowDropdown(false);
-                }}
-              >
-                <Text style={styles.dropdownText}>{sport}</Text>
-              </TouchableOpacity>
-            ))
+          {loading ? (
+            <Text style={styles.noResult}>Loading...</Text>
+          ) : filteredSports.length > 0 ? (
+            filteredSports.map((sport, index) => {
+              const id = sport.id ?? sport.sports_id; // API field
+              const name = sport.name ?? sport.sport_name;
+              return (
+                <TouchableOpacity
+                  key={id ?? index}
+                  style={styles.dropdownItem}
+                  onPress={() => {
+                    onSelect({id,name});     // return sport ID
+                    setQuery(name);  // show in input
+                    setShowDropdown(false);
+                  }}
+                >
+                  <Text style={styles.dropdownText}>{name}</Text>
+                </TouchableOpacity>
+              );
+            })
           ) : (
             <Text style={styles.noResult}>No sport found</Text>
           )}
@@ -67,6 +92,7 @@ const SearchButton = ({ onSelect }: SearchBarProps) => {
 };
 
 export default SearchButton;
+
 
 const styles = StyleSheet.create({
 container: {
