@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import CalendarView from "@/components/CalendarView";
 import SearchButton from "@/components/Searchbtton";
+import SlectSport from "@/components/SlectSport";
 
 export default function Index() {
   const [selectedSport, setSelectedSport] = useState<{ id: string | number; name: string } | null>(null);
@@ -21,7 +22,7 @@ export default function Index() {
       {selectedSport ? (
         <CalendarView selectedSport={selectedSport} />
       ) : (
-        <Text style={styles.placeholder}>Please select a sport</Text>
+        <Text style={styles.placeholder}><SlectSport/></Text>
       )}
     </View>
   );

@@ -52,18 +52,21 @@ npx expo start
  ┣ 📂 assets
  ┃ ┣ 📂 animations
  ┃ ┃ ┣ 📜 loader.json
- ┃ ┃ ┗ 📜 nodata.json
+ ┃ ┃ ┣ 📜 nodata.json
+ ┃ ┃ ┗ 📜 SlectSport.json
  ┃ ┗ 📂 images
  ┣ 📂 components
  ┃ ┣ 📜 CalendarView.tsx
  ┃ ┣ 📜 Loader.tsx
  ┃ ┣ 📜 Nodata.tsx
  ┃ ┣ 📜 Searchbtton.tsx
+ ┃ ┣ 📜 SlectSport.tsx
  ┃ ┗ 📜 TournamentCard.tsx
  ┣ 📜 app.json
  ┣ 📜 eslint.config.js
  ┣ 📜 .gitignore
  ┗ 📜 README.md
+
 ```
 ## 👤 Developer: Shubham Sharma
 
