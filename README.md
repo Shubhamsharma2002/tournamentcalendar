@@ -44,7 +44,7 @@ cd tournament-calendar
 npm install
 npx expo start
 ```
-
+```
 📦 TOURNAMENTCALENDAR
  ┣ 📂 app
  ┃ ┣ 📜 _layout.tsx
@@ -64,7 +64,7 @@ npx expo start
  ┣ 📜 eslint.config.js
  ┣ 📜 .gitignore
  ┗ 📜 README.md
-
+```
 ## 👤 Developer: Shubham Sharma
 
 Feel free to connect with me:
