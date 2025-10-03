@@ -39,7 +39,7 @@ Select your sport, view upcoming tournaments, explore fixtures, and enjoy a smoo
 
 1. Clone the repo  
 ```bash
-git clone https://github.com/yourusername/tournament-calendar.git
+git clone https://github.com/Shubhamsharma2002/tournamentcalendar
 cd tournament-calendar
 npm install
 npx expo start
