@@ -4,12 +4,9 @@ A **React Native Expo app** to browse, search, and explore **sports tournaments 
 Select your sport, view upcoming tournaments, explore fixtures, and enjoy a smooth UI experience with custom styling and loaders.  
 
 ---
+## 🎥 Demo Video  
 
-## 📸 Screenshots  
-
-| Search Sports | Tournament Calendar | Tournament Details |
-|---------------|----------------------|---------------------|
-| ![Search](https://via.placeholder.com/250x500) | ![Calendar](https://via.placeholder.com/250x500) | ![Tournament](https://via.placeholder.com/250x500) |
+[![Watch the Demo](https://img.youtube.com/vi/5qap5aO4i9A/maxresdefault.jpg)](https://drive.google.com/file/d/1OF3eEWlS22S9Q6iZhVNrNGkJbm2yvsHB/view?usp=sharing)
 
 ---
 

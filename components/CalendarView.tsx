@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Calendar } from "react-native-calendars";
 import Loader from "./Loader";
+import NodataPage from "./Nodata";
 import TournamentCard from "./TournamentCard";
 
 const CalendarView = ({ selectedSport }: { selectedSport: { id: string | number; name: string } | null }) => {
@@ -116,7 +117,7 @@ const CalendarView = ({ selectedSport }: { selectedSport: { id: string | number;
       <ScrollView style={{ flex: 1, marginTop: 10 }} showsVerticalScrollIndicator={false}>
         {tournamentsToShow.length === 0 ? (
           <Text style={{ textAlign: "center", marginTop: 20 }}>
-            No tournaments found.
+            <NodataPage/> 
           </Text>
         ) : (
           tournamentsToShow.map((t) => <TournamentCard key={t.id} {...t} />)
